@@ -1,0 +1,19 @@
+clc
+clear
+f=imread(grey.tif');
+#f = [5 2 1; 7 6 6; 4 0 0; 5 2 6; 0 1 6]
+[row,col] = size(f);
+#r1 = 4;
+r1 = 120;
+for x = 1:1:row
+for y = 1:1:col
+if (0 <= f(x,y) && f(x,y) <=r1)
+      g(x,y) = 0;
+else
+      g(x,y) = 255;
+endif
+endfor
+end
+#g
+figure(1),imshow(uint8(f))
+figure(2),imshow(uint8(g))
