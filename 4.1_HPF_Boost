@@ -1,6 +1,6 @@
 clc
 clear
-f = double(imread('devesh_grey.tif'));
+f = double(imread('grey.tif'));
 #f = imnoise(f1, "gaussian");
 #f = [5 5 5 5 5 5 5 5 ; 5 5 5 5 5 5 5 5 ; 5 5 5 5 5 5 5 5 ; 5 5 5 5 5 5 5 5 ; 186 186 186 186 186 186 186 186 ; 186 186 186 186 186 
 w = [-1 -1 -1 ; -1 9 -1 ; -1 -1 -1];
