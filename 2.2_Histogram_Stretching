@@ -1,0 +1,36 @@
+clc
+clear
+#f = [5 2 2 4; 7 2 1 6; 7 7 3 5; 7 2 0 5];
+f = uint8(imread('pout.tif'));
+#h = zeros(1,8);
+h = zeros(1,256);
+[row, col] = size(f);
+for x = 1:1:row
+for y = 1:1:col
+    Temp = f(x,y);
+    h(Temp+1) = h(Temp+1) + 1;
+endfor
+end
+figure(1),imshow(uint8(f))
+figure(2), bar(h)
+###########################################
+gmax = 255;
+gmin = 0;
+fmax = max(max(f));
+fmin = min(min(f));
+for x = 1:1:row
+for y = 1:1:col
+    g(x,y) = (((gmax-gmin)/(fmax-fmin))*(f(x,y)-fmin))+gmin;
+endfor
+end
+figure(3), imshow(uint8(g))
+###########################################
+h1 = zeros(1,256);
+[row, col] = size(g);
+for x = 1:1:row
+for y = 1:1:col
+    Temp = g(x,y);
+    h1(Temp+1) = h1(Temp+1) + 1;
+endfor
+end
+figure(4), bar(h1)
